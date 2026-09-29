@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include wa_project *.css
+recursive-include wa_project *.csv
+recursive-include wa_project *.html
+recursive-include wa_project *.ico
+recursive-include wa_project *.js
+recursive-include wa_project *.json
+recursive-include wa_project *.md
+recursive-include wa_project *.png
+recursive-include wa_project *.py
+recursive-include wa_project *.svg
+recursive-include wa_project *.txt
+recursive-exclude wa_project *.pyc

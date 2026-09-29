@@ -1,0 +1,117 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:subtask_name",
+ "creation": "2024-02-07 14:16:38.397938",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "subtask_name",
+  "parent_task",
+  "parent_task_name",
+  "subproject",
+  "expected_start_date",
+  "expected_completion_date",
+  "column_break_psawc",
+  "priority",
+  "_complete_method",
+  "_completed",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "subtask_name",
+   "fieldtype": "Data",
+   "label": "Subtask Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "parent_task",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Parent Task",
+   "options": "Task",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "parent_task.subject",
+   "fieldname": "parent_task_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Parent Task Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "subproject",
+   "fieldtype": "Link",
+   "label": "SubProject",
+   "options": "SubProject"
+  },
+  {
+   "fieldname": "expected_start_date",
+   "fieldtype": "Date",
+   "label": "Expected Start Date"
+  },
+  {
+   "fieldname": "expected_completion_date",
+   "fieldtype": "Date",
+   "label": "Expected Completion Date"
+  },
+  {
+   "fieldname": "column_break_psawc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "\nLow\nMedium\nHigh"
+  },
+  {
+   "default": "Task Completion",
+   "fieldname": "_complete_method",
+   "fieldtype": "Select",
+   "label": "% Complete Method",
+   "options": "Manual\nTask Completion\nTask Progress\nTask Weight"
+  },
+  {
+   "fieldname": "_completed",
+   "fieldtype": "Percent",
+   "label": "% Completed"
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Select",
+   "label": "Is Active",
+   "options": "Yes\nNo"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-02-07 14:16:38.397938",
+ "modified_by": "Administrator",
+ "module": "Project BOQ and POW",
+ "name": "SubTask",
+ "name_case": "UPPER CASE",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

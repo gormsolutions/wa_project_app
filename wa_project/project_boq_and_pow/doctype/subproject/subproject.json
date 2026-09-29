@@ -1,0 +1,110 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:subproject",
+ "creation": "2024-02-07 14:12:02.612705",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "subproject",
+  "parent_project",
+  "parent_project_name",
+  "expected_start_date",
+  "expected_completion_date",
+  "column_break_ecbaf",
+  "priority",
+  "complete_method",
+  "completed",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "subproject",
+   "fieldtype": "Data",
+   "label": "SubProject",
+   "unique": 1
+  },
+  {
+   "fieldname": "parent_project",
+   "fieldtype": "Link",
+   "label": "Parent Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "parent_project.project_name",
+   "fieldname": "parent_project_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Parent Project Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "expected_start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expected_completion_date",
+   "fieldtype": "Date",
+   "label": "Expected Completion Date"
+  },
+  {
+   "fieldname": "column_break_ecbaf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "\nLow\nMedium\nHigh"
+  },
+  {
+   "default": "Task Completion",
+   "fieldname": "complete_method",
+   "fieldtype": "Select",
+   "label": "% Complete Method",
+   "options": "Manual\nTask Completion\nTask Progress\nTask Weight"
+  },
+  {
+   "fieldname": "completed",
+   "fieldtype": "Percent",
+   "label": "% Completed"
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Select",
+   "label": "Is Active",
+   "options": "Yes\nNo"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-02-07 14:50:44.010809",
+ "modified_by": "Administrator",
+ "module": "Project BOQ and POW",
+ "name": "SubProject",
+ "name_case": "UPPER CASE",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

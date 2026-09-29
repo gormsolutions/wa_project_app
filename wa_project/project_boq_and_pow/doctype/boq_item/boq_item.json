@@ -1,0 +1,356 @@
+{
+ "actions": [],
+ "creation": "2024-02-07 14:26:45.701182",
+ "default_view": "List",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_ref",
+  "item_code",
+  "item_name",
+  "column_break_3",
+  "required_by",
+  "boq_no",
+  "source_warehouse",
+  "allow_alternative_item",
+  "quantity_and_rate",
+  "uom",
+  "qty",
+  "col_break2",
+  "stock_qty",
+  "actual_qty",
+  "stock_uom",
+  "conversion_factor",
+  "rate_amount_section",
+  "base_rate",
+  "parent_group_task",
+  "parent_task",
+  "sub_task",
+  "column_break_7izpc",
+  "rate",
+  "labour_rate",
+  "material_amount",
+  "labour_amount",
+  "total_amount",
+  "amount",
+  "base_amount",
+  "qty_consumed_per_unit",
+  "section_break_27",
+  "has_variants",
+  "include_item_in_manufacturing",
+  "original_item",
+  "column_break_33",
+  "sourced_by_supplier",
+  "lft",
+  "rgt",
+  "is_group"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fieldname": "item_ref",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ref"
+  },
+  {
+   "columns": 1,
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Item",
+   "oldfieldname": "item_code",
+   "oldfieldtype": "Link",
+   "options": "Item",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "columns": 3,
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 1,
+   "fieldname": "required_by",
+   "fieldtype": "Date",
+   "label": "Reqd By"
+  },
+  {
+   "depends_on": "eval:!doc.do_not_explode",
+   "fieldname": "boq_no",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "label": "BOQ No",
+   "oldfieldname": "bom_no",
+   "oldfieldtype": "Link",
+   "options": "Bill of Quantity",
+   "print_width": "150px",
+   "search_index": 1,
+   "width": "150px"
+  },
+  {
+   "fieldname": "source_warehouse",
+   "fieldtype": "Link",
+   "label": "Source Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_alternative_item",
+   "fieldtype": "Check",
+   "label": "Allow Alternative Item"
+  },
+  {
+   "fieldname": "quantity_and_rate",
+   "fieldtype": "Section Break",
+   "label": "Quantity and Rate"
+  },
+  {
+   "columns": 1,
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "UOM",
+   "options": "UOM",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty",
+   "oldfieldname": "qty",
+   "oldfieldtype": "Currency",
+   "precision": "1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "col_break2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "stock_qty",
+   "fieldtype": "Float",
+   "label": "Available Qty",
+   "oldfieldname": "stock_qty",
+   "oldfieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "actual_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Stock Qty",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "stock_uom",
+   "fieldtype": "Link",
+   "label": "Stock UOM",
+   "oldfieldname": "stock_uom",
+   "oldfieldtype": "Data",
+   "options": "UOM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "conversion_factor",
+   "fieldtype": "Float",
+   "label": "Conversion Factor"
+  },
+  {
+   "fieldname": "rate_amount_section",
+   "fieldtype": "Section Break",
+   "label": "Task And Amount"
+  },
+  {
+   "fieldname": "base_rate",
+   "fieldtype": "Currency",
+   "label": "Basic Rate (Company Currency)",
+   "options": "Company:company:default_currency",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "parent_group_task",
+   "fieldtype": "Data",
+   "label": "Parent Group task"
+  },
+  {
+   "fieldname": "parent_task",
+   "fieldtype": "Data",
+   "label": "Parent Task"
+  },
+  {
+   "fieldname": "sub_task",
+   "fieldtype": "Link",
+   "label": "Sub Task",
+   "options": "SubTask"
+  },
+  {
+   "fieldname": "column_break_7izpc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 1,
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Material Rate",
+   "options": "currency",
+   "precision": "2"
+  },
+  {
+   "columns": 1,
+   "fieldname": "labour_rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Labour Rate",
+   "options": "currency",
+   "precision": "1"
+  },
+  {
+   "columns": 1,
+   "fieldname": "material_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Material Amount",
+   "options": "currency",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "labour_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Labour Amount",
+   "options": "currency",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "options": "currency",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "oldfieldname": "amount_as_per_mar",
+   "oldfieldtype": "Currency",
+   "options": "currency",
+   "print_width": "150px",
+   "width": "150px"
+  },
+  {
+   "fieldname": "base_amount",
+   "fieldtype": "Currency",
+   "label": "Amount (Company Currency)",
+   "options": "Company:company:default_currency",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "qty_consumed_per_unit",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Qty Consumed Per Unit",
+   "oldfieldname": "qty_consumed_per_unit",
+   "oldfieldtype": "Float",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_27",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "item_code.has_variants",
+   "fieldname": "has_variants",
+   "fieldtype": "Check",
+   "label": "Has Variants",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "item_code.include_item_in_manufacturing",
+   "fieldname": "include_item_in_manufacturing",
+   "fieldtype": "Check",
+   "label": "Include Item In Manufacturing"
+  },
+  {
+   "fieldname": "original_item",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Original Item",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_33",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "sourced_by_supplier",
+   "fieldtype": "Check",
+   "label": "Sourced by Supplier"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-02-08 05:03:23.279818",
+ "modified_by": "Administrator",
+ "module": "Project BOQ and POW",
+ "name": "BOQ Item",
+ "nsm_parent_field": "parent_boq_item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

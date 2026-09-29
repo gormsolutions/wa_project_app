@@ -1,0 +1,84 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "TBG-.##",
+ "creation": "2024-03-20 10:56:28.262991",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle_registration_number",
+  "challan_number",
+  "location",
+  "delivery_type",
+  "rate",
+  "date",
+  "party_information"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle_registration_number",
+   "fieldtype": "Link",
+   "label": "Vehicle Registration Number",
+   "options": "Vehicle"
+  },
+  {
+   "fieldname": "challan_number",
+   "fieldtype": "Data",
+   "label": "Challan Number"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Location"
+  },
+  {
+   "fieldname": "delivery_type",
+   "fieldtype": "Link",
+   "label": "Delivery Type",
+   "options": "Delivery Type"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Int",
+   "label": "Rate"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "party_information",
+   "fieldtype": "Data",
+   "label": "Party Information"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-03-20 11:12:59.227554",
+ "modified_by": "Administrator",
+ "module": "Project BOQ and POW",
+ "name": "Transport Bill Generator",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

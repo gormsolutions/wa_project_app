@@ -1,0 +1,258 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-02-07 14:27:56.588612",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "section_break_vohvs",
+  "companie",
+  "program_of_work",
+  "column_break_grjpl",
+  "schedule_date",
+  "warehouse_section",
+  "source_warehouse",
+  "column_break_clmgs",
+  "target_warehouse",
+  "project_details_section",
+  "parent_project",
+  "parent_project_name",
+  "column_break_hkzgv",
+  "project",
+  "subproject_name",
+  "column_break_0ttet",
+  "start_date",
+  "end_date",
+  "section_break_5z1xe",
+  "items",
+  "section_break_item",
+  "material_cost",
+  "column_break_5b4yu",
+  "labour_cost",
+  "column_break_js2i2",
+  "total_amount",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "BOQ-.YYYY.-"
+  },
+  {
+   "fieldname": "section_break_vohvs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "companie",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "program_of_work",
+   "fieldtype": "Link",
+   "label": "Program of Work",
+   "options": "Program Of Work",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_grjpl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "schedule_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Required By"
+  },
+  {
+   "fieldname": "warehouse_section",
+   "fieldtype": "Section Break",
+   "label": "Warehouse"
+  },
+  {
+   "fieldname": "source_warehouse",
+   "fieldtype": "Link",
+   "label": "Source Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "column_break_clmgs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "target_warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Target Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "project_details_section",
+   "fieldtype": "Section Break",
+   "label": "Project Details"
+  },
+  {
+   "fieldname": "parent_project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Parent Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.parent_project",
+   "fetch_from": "parent_project.project_name",
+   "fieldname": "parent_project_name",
+   "fieldtype": "Data",
+   "label": "Parent Project Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_hkzgv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.parent_project",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "SubProject",
+   "options": "SubProject"
+  },
+  {
+   "depends_on": "eval:doc.project",
+   "fetch_from": "project.subproject",
+   "fieldname": "subproject_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "SubProject Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_0ttet",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.project",
+   "fetch_from": "project.expected_start_date",
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.project",
+   "fetch_from": "project.expected_completion_date",
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_5z1xe",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "BOQ Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_item",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "material_cost",
+   "fieldtype": "Currency",
+   "label": "Material Amount",
+   "non_negative": 1,
+   "options": "currency",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5b4yu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "labour_cost",
+   "fieldtype": "Currency",
+   "label": "Labour Amount",
+   "options": "currency",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_js2i2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "options": "currency",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Bill of Quantity",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "group": "Material Request",
+   "link_doctype": "Material Request",
+   "link_fieldname": "custom_bill_of_quantity"
+  }
+ ],
+ "modified": "2024-02-08 05:06:49.497094",
+ "modified_by": "Administrator",
+ "module": "Project BOQ and POW",
+ "name": "Bill of Quantity",
+ "name_case": "UPPER CASE",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "parent_project_name",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "parent_project"
+}
